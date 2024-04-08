@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserSignInRequest;
 use App\Http\Requests\UserSignUpRequest;
 use App\Interfaces\UserInterface;
 use App\Services\UserServices;
@@ -45,7 +46,7 @@ class UserController extends Controller
         return view('pages.signIn');
     }
 
-    public function signIn(Request $request)
+    public function signIn(UserSignInRequest $request)
     {
 
         $credentials = $request->only('email', 'password');
@@ -55,7 +56,7 @@ class UserController extends Controller
         {
             return redirect()->route('dashboard');
         } else {
-            return redirect()->route('shaw.login.form')->with('error', 'Invalid credentials');
+            return redirect()->route('shaw.login.form')->with('error', 'Invalid credentials..!!');
         }
     }
 
