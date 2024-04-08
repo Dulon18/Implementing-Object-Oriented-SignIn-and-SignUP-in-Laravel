@@ -22,6 +22,6 @@ Route::get('/signup', [UserController::class, 'showSignUpForm'])->name('signup.f
 Route::post('/store/signup', [UserController::class, 'signUpDataStore'])->name('store.signUp.data');
 
 Route::get('/login', [UserController::class, 'showSignInForm'])->name('shaw.login.form');
-Route::post('/store', [UserController::class, 'signIn'])->name('signIn');
+Route::post('/store/signin', [UserController::class, 'signIn'])->name('signIn');
 
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
