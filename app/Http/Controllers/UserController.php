@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\UserSignUpRequest;
 use App\Interfaces\UserInterface;
 use App\Services\UserServices;
 use Illuminate\Http\Request;
@@ -30,14 +32,10 @@ class UserController extends Controller
     }
 
     /* sign in form data store */
-    public function signUpDataStore(Request $request)
+    public function signUpDataStore(UserSignUpRequest $request)
     {
-        //dd($request->all());
-        $validatedData = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required',
-        ]);
+    
+        $validatedData = $request->validated();
         $user = $this->userService->createUser($validatedData);
         return redirect()->route('shaw.login.form');
     }
