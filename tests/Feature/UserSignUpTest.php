@@ -26,7 +26,7 @@ class UserSignUpTest extends TestCase
     public function testValidationFailsWithEmptyName()
     {
         $userData = [
-            'name' => 'Shakil Ahammed',
+            'name' => '',
             'email' => 'shakil@example.com',
             'password' => 'password123!',
         ];
