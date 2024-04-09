@@ -133,5 +133,7 @@ class UserSignUpTest extends TestCase
             'password' => '@Password123',
         ];
         $response = $this->post('/store/signup', $userData);
+        $response->assertRedirect('/login');
+    
     }
 }
