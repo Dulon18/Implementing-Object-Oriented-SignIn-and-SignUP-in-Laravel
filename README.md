@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+Single Responsibility Principle (SRP)
+The Single Responsibility Principle advocates that a class should have only one reason to change. In Laravel, this translates to ensuring that each class is responsible for a single aspect of your application.
+
 
 ## Installation Instructions
 
